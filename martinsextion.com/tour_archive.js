@@ -186,7 +186,7 @@ function getDates(dates, placement){
 };
 function getPastDates(dates, placement){
 
-	$.getJSON('http://api.bandsintown.com/artists/Martin%20Sexton/events.json?api_version=2.0&app_id=OniracomGLove&date=all&callback=?',  function(data){
+	$.getJSON('https://api.bandsintown.com/artists/Martin%20Sexton/events.json?api_version=2.0&app_id=OniracomGLove&date=all&callback=?',  function(data){
 		if(!placement){
 			placement = $('#pasttour_dates tbody');
 		}
