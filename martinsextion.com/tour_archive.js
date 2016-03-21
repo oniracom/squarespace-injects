@@ -194,6 +194,7 @@ function getPastDates(dates, placement){
 			dates = data.length;
 		}
 		var i = dates;
+		var template = _.template($('#bitRow').html());
 		while (i--)
 			{
 				//set each data object for easier grabbing
@@ -213,14 +214,9 @@ function getPastDates(dates, placement){
 				console.log(dateValue+'-'+today); //obj.title.replace(obj.artists[1].name+" @ ", "")
 				if (dateValue < today) {
 				//set visible row
-				var trString = '<tr class="whiteTrans"><td>'+date+'</td><td>';
-				trString += '<h4>'+obj.venue.name+' - '+obj.formatted_location+'</h4>'+description+'</td><td class="mobileHide">';
-				trString += (obj.ticket_type != 'Sold Out' ? '' : '<a class="ticketLink soldOut caps">Sold Out</a>')+'</td><td class="mobileHide" width="18%">';
-				trString += '<a class="fbRsvpLink" href="'+obj.facebook_rsvp_url+'" target="_blank">I Was There</a></td></tr>';
+				placement.append(template({obj: obj, date: date, description: description}));
 				placement.append(trString);
 				}
 			}
-	    $('#bgspast tr.whiteTrans:even').addClass ('whiteTransEven');
-			$('#bgspast tr.whiteTrans:odd').addClass ('whiteTransOdd');
 	});
 };
