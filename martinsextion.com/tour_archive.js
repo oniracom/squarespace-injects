@@ -127,7 +127,7 @@ call function like
 			getDates(5, $('#tour_dates'));
 
 */
-$('.detailLink').live('click', function(e){
+$(document).on('click', '.detailLink', function(e){
 	e.preventDefault();
 var parentRow = $(this).parents('tr');
 	$('.detailRow').hide();
