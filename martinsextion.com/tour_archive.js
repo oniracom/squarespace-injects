@@ -219,7 +219,6 @@ function getPastDates(dates, placement){
 				if (dateValue < today) {
 				//set visible row
 				placement.append(template({obj: obj, date: date, description: description, artists: $artists}));
-				placement.append(trString);
 				}
 			}
 	});
