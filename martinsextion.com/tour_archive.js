@@ -211,10 +211,14 @@ function getPastDates(dates, placement){
 				} else {
 					description = '';
 				}
+				$artists = obj.artists;
+				$artists.shift();
+				$artists = $artists.slice(0,4);
+
 				console.log(dateValue+'-'+today); //obj.title.replace(obj.artists[1].name+" @ ", "")
 				if (dateValue < today) {
 				//set visible row
-				placement.append(template({obj: obj, date: date, description: description}));
+				placement.append(template({obj: obj, date: date, description: description, artists: $artists}));
 				placement.append(trString);
 				}
 			}
