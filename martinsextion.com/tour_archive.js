@@ -201,7 +201,7 @@ function getPastDates(dates, placement){
 				var obj = data[i];
 				//format long date to small date for table view
 				var datetime = new Date(obj.datetime);
-				var date = datetime.toString('MM/d/yyyy')
+				var date = datetime.toString('MMM d, yyyy')
 				var dateValue = new Date(datetime).toString('yyyyMMdd');
 				var today = new Date().toString('yyyyMMdd');
 				//set description if it exists
@@ -215,10 +215,10 @@ function getPastDates(dates, placement){
 				$artists.shift();
 				$artists = $artists.slice(0,4);
 
-				console.log(dateValue+'-'+today); //obj.title.replace(obj.artists[1].name+" @ ", "")
+				// console.log(dateValue+'-'+today); //obj.title.replace(obj.artists[1].name+" @ ", "")
 				if (dateValue < today) {
 				//set visible row
-				placement.append(template({obj: obj, date: date, description: description, artists: $artists}));
+					placement.append(template({obj: obj, date: date, description: description, artists: $artists}));
 				}
 			}
 	});
