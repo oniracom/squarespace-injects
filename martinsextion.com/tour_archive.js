@@ -152,7 +152,7 @@ _.templateSettings = {
 };
 function getDates(dates, placement){
 
-	$.getJSON('http://api.bandsintown.com/artists/Martin%20Sexton/events.json?api_version=2.0&app_id=OniracomGLove&callback=?',  function(data){
+	$.getJSON('https://api.bandsintown.com/artists/Martin%20Sexton/events.json?api_version=2.0&app_id=OniracomGLove&callback=?',  function(data){
 		if(!placement){
 			placement = $('#tour_dates tbody');
 		}
@@ -161,13 +161,16 @@ function getDates(dates, placement){
 		}
 
 		var template = _.template($('#bitRow').html());
-		for (var i=0;i<dates;i++)
+		for (var i=0; i<Math.min(dates, data.length); i++)
 		{
 			//set each data object for easier grabbing
 			var obj = data[i];
 			//format long date to small date for table view
-			console.log('date1',Date.parse(obj.datetime), obj.datetime);
-			var parsedDate = Date.parse(obj.datetime).toString('MMM d');
+			var datetime = new Date(obj.datetime);
+			var date = datetime.toString('MMM d, yyyy')
+			var dateValue = new Date(datetime).toString('yyyyMMdd');
+			var today = new Date().toString('yyyyMMdd');
+
 			var $ticket_url = obj.ticket_url;
 			var description = obj.description;
 			if(description){
@@ -179,7 +182,7 @@ function getDates(dates, placement){
 			$artists.shift();
 			$artists = $artists.slice(0,4);
 			var rowClass = (i%2 == 0 ? 'whiteTransEven' : 'whiteTransOdd');
-			placement.append(template({obj: obj, date: parsedDate, ticket_url: $ticket_url, description: description, rowClass: rowClass, artists: $artists}));
+			placement.append(template({obj: obj, date: date, ticket_url: $ticket_url, description: description, rowClass: rowClass, artists: $artists}));
 			//trString);
 		}
 	});
@@ -193,7 +196,7 @@ function getPastDates(dates, placement){
 		if(!dates){
 			dates = data.length;
 		}
-		var i = dates;
+		var i = Math.min(dates, data.length);
 		var template = _.template($('#bitRow').html());
 		while (i--)
 			{
