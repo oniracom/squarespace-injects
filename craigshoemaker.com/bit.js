@@ -21,7 +21,7 @@ function bitDate(data) {
 	this.active = ko.observable(false);
 
 	self.google_map_img = ko.computed(function() {
-		return 'http://maps.googleapis.com/maps/api/staticmap?center='+self.venue.latitude+','+self.venue.longitude+'&zoom=13&size=376x300&maptype=roadmap%20&markers=color:orange|label:G|'+self.venue.latitude+','+self.venue.longitude+'&sensor=false';
+		return 'https://maps.googleapis.com/maps/api/staticmap?center='+self.venue.latitude+','+self.venue.longitude+'&zoom=13&size=376x300&maptype=roadmap%20&markers=color:orange|label:G|'+self.venue.latitude+','+self.venue.longitude+'&sensor=false';
 	});
 
 	self.directions = ko.computed(function() {
@@ -36,7 +36,7 @@ function bitViewModel(limit) {
 
 	self.tourDates = ko.observableArray([]);
 
-	var bitCurl = 'http://api.bandsintown.com/artists/{bitArtist}/events.json?api_version=2.0&app_id=OniracomGLove&callback=?'
+	var bitCurl = 'https://api.bandsintown.com/artists/{bitArtist}/events.json?api_version=2.0&app_id=OniracomGLove&callback=?'
 	$.getJSON(bitCurl,  function(data){
 		var bitDates = $.map(data, function(date) {  return new bitDate(date); });
 		if(limit != undefined) {
