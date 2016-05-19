@@ -36,7 +36,7 @@ function bitViewModel(limit) {
 
 	self.tourDates = ko.observableArray([]);
 
-	var bitCurl = 'https://api.bandsintown.com/artists/{bitArtist}/events.json?api_version=2.0&app_id=OniracomGLove&callback=?'
+	var bitCurl = 'https://api.bandsintown.com/artists/craigshoemaker/events.json?api_version=2.0&app_id=OniracomGLove&callback=?'
 	$.getJSON(bitCurl,  function(data){
 		var bitDates = $.map(data, function(date) {  return new bitDate(date); });
 		if(limit != undefined) {
