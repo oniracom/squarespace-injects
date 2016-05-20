@@ -1,0 +1,169 @@
+.slideshow {width: 100%; height:0px; padding-bottom: 17.02128%; margin:auto; }
+.slideshow img {width: 100%; height: auto; }
+#bandsintown {color: #fff;}
+	
+th, td{
+	text-align: center; vertical-align: middle;
+}
+
+/* begin reset of all BIT stuff*/
+#tourAdmat { display: block; margin: 5px auto;}
+
+#tour table#bit-upcoming-events.bit-events tr:hover { background-color: rgba(1,1,1,.5);}
+ #tour table#bit-upcoming-events.bit-events th { font-size: .9em;padding:10px 10px 10px 0;}
+#tour table#bit-upcoming-events.bit-events td, #tour table#bit-upcoming-events.bit-events th { border: none;  }
+#tour table#bit-upcoming-events.bit-events td { padding: 15px 10px 15px 0;}
+
+#tour table#bit-upcoming-events.bit-events th.bit-date, #tour table#bit-upcoming-events.bit-events td.bit-date { width: 100px;}
+#tour table#bit-upcoming-events.bit-events td.bit-date {font-size: 17px;text-transform: uppercase;}
+	#tour #bit-events td a.bit-rsvp {
+	background: url("/images/pages/home/littlefb.png") no-repeat scroll right top transparent;
+	font-weight: normal;
+	height: 14px;
+	line-height: 16px;
+	padding: 0 20px 0 0;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	border: none;
+	font-size: 12px;
+}
+#tour #bit-events td a.bit-buy-tix { float: none;}
+#tour #bit-events td a.bit-rsvp:hover { color: #991f0b;}
+#tour #bit-events td.bit-tickets { text-transform: uppercase;}
+#tour #bit-events td.bit-tickets, #tour #bit-events th.bit-tickets {
+	width: 130px;
+	text-align: center; padding: 0;
+}
+#tour th.thRsvp, #tour th.bit-tickets { text-align: center; padding: 0;}
+#tour tr.bit-header { display: none;}
+.soldout { color: #999; font-size: .9em;}
+
+.spacingTour {
+    margin: 0px 0 10px;
+    padding-top: 10px;
+}
+#tour_dates {
+	width: 100%;
+}
+#tour_dates th, 
+#tour_dates td {
+    border-color:#393836;
+    text-align: left;
+}
+
+#tour_dates tr.whiteTransOdd {
+	background-color: #16191c;
+}
+#tour_dates .detailsShown th,
+#tour_dates .detailsShown td {
+	border-color:transparent;
+}
+
+#tour_dates .button.plusLink {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	height: 16px;
+	line-height: 16px;
+	padding: 0;
+}
+
+.supportArtists { font-size: 0.75em; }
+.detailRow {display: none;}
+.detailRow img {
+	display: block;
+	border: 2px solid #000;
+	margin: 0 24px 0 0;
+	float: left;
+}
+.detailRow td {
+	padding: 20px 0;
+}
+
+.tweetTourShare:hover {background-position: -44px -33px;}
+
+.btn-large {
+    border-radius: 6px 6px 6px 6px;
+    font-size: 32px;
+    padding: 14px 16px;
+}
+
+.btn-med {
+    border-radius: 6px 6px 6px 6px;
+    font-size: 18px;
+    padding: 14px 16px;
+}
+
+.glyphicon-backward {padding-top: 22px;}
+.glyphicon-forward {padding-top: 22px; padding-right: 20px;}
+
+.glyphicon-play {margin: 0;}
+
+#tour_dates td {
+    text-align: left;
+}
+
+@media (max-width:480px) {
+	.mobileHide {display:none;}
+	.mobileShrink {width: 20px;}
+}
+
+#tour_dates .ticketlinks {
+	text-align: right;
+	vertical-align: middle;
+}
+#tour_dates .ticketLink {
+	font-weight: 700;
+	padding: 8px 16px;
+	text-align: center;
+	text-transform: uppercase;
+}
+#tour_dates .rsvpSection { text-align: center; }
+#tour_dates .fbrsvp {
+	/*color: #4862A3;*/
+	font-size: 36px
+}
+#tour_dates .rsvpSection .fa-facebook-square {
+	background-color:#fff;
+	border-radius: 16px;
+	line-height: 31px;
+}
+#tour_dates .arrowLink { font-size: 28px; }
+#tour_dates .detailRow img {
+	border: 2px solid #000000;
+	display: block;
+	float: left;
+	margin: 0.5em 1em 0.5em 0;
+}
+
+#tour_dates .supportArtists { font-size: 0.7143em; display: block; }
+#tour_dates .borderDetailLink {
+	display: block;
+	font-size: 18px;
+	margin: 5px 0;
+}
+#tour_dates .sharelinks span {
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-right: 5px;
+}
+#tour_dates .sharelinks a {
+	font-size: 18px;
+	margin: 0 5px;
+}
+
+#tour_dates .googlemap-link { display: block; }
+@media (max-width: 767px) {
+	/* ---------- tour ----------- */
+	#tour_dates  { font-size: 14px; }
+	#tour_dates  td {padding: 8px;}
+	#tour_dates .ticketLink { display: inline-block; padding: 0 12px; }
+	#tour_dates .detailRow .googlemap { float: none; margin: 0; text-align: center; max-width: 100%; }
+}
+@media (max-width: 480px) {
+	#tour_dates .detailRow td { padding: 0; }
+}
+@media (max-width: 380px) {
+	#tour_dates .detailRow .googlemap { width: 280px; }
+}
