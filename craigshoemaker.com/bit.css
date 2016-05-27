@@ -1,7 +1,7 @@
 .slideshow {width: 100%; height:0px; padding-bottom: 17.02128%; margin:auto; }
 .slideshow img {width: 100%; height: auto; }
 #bandsintown {color: #fff;}
-	
+
 th, td{
 	text-align: center; vertical-align: middle;
 }
@@ -46,10 +46,16 @@ th, td{
 #tour_dates {
 	width: 100%;
 }
-#tour_dates th, 
+#tour_dates th,
 #tour_dates td {
     border-color:#393836;
     text-align: left;
+}
+#tour_dates td a {
+	color: #000;
+}
+#tour_dates td a.arrowSprite {
+	color: #fec232;
 }
 
 #tour_dates tr.whiteTransOdd {
