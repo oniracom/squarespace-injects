@@ -1,7 +1,8 @@
 
 
-function bitDate(data) {
+function bitDate(data, dateIndex) {
 	var self = this;
+	self.dateIndex = dateIndex;
 	self.addTicket = function(data) {
 		var datetime = moment(data.datetime);
 		self.tickets.push({ticket_url: data.ticket_url, time: datetime.format('LT'), rsvp_url:data.facebook_rsvp_url});
@@ -48,7 +49,10 @@ function bitViewModel(limit) {
 	self.tourDates = ko.observableArray([]);
 
 	self.openFirstDate = function (elements, data) {
-		console.log('after render!');
+		if(data.dateIndex === 0) {
+			data.active(true);
+		}
+		// console.log('after render!');
 		console.log('elements', elements);
 		console.log('data', data);
 	};
@@ -63,11 +67,11 @@ function bitViewModel(limit) {
 			//slice the left 2016-05-27
 			var showDate = show.datetime.substring(5, show.datetime.length).slice(0,-9);
 			if (bitDates.length === 0) {
-				bitDates.push(new bitDate(show));
+				bitDates.push(new bitDate(show, i));
 			} else if (bitDates[bitDates.length-1].date === showDate) {
 				bitDates[bitDates.length-1].addTicket(show);
 			} else {
-				bitDates.push(new bitDate(show));
+				bitDates.push(new bitDate(show, i));
 			}
 
 			//is it the same as the next date (if there is a next?)
