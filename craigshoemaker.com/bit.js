@@ -37,8 +37,8 @@ function bitDate(data) {
 	self.directions = ko.computed(function() {
 		return 'https://maps.google.com/maps?daddr='+self.venue.name+'&amp;hl=en&amp;sll='+self.venue.latitude+','+self.venue.longitude;
 	});
-	//self.date = 
-	
+	//self.date =
+
 }
 
 function bitViewModel(limit) {
@@ -47,8 +47,14 @@ function bitViewModel(limit) {
 
 	self.tourDates = ko.observableArray([]);
 
+	self.openFirstDate = function (elements, data) {
+		console.log('after render!');
+		console.log('elements', elements);
+		console.log('data', data);
+	};
+
 	var bitCurl = 'https://api.bandsintown.com/artists/craigshoemaker/events.json?api_version=2.0&app_id=OniracomGLove&callback=?';
-	
+
 	$.getJSON(bitCurl,  function(data){
 		var bitDates = [];
 		for(var i = 0; i < data.length; i++) {
@@ -63,7 +69,7 @@ function bitViewModel(limit) {
 			} else {
 				bitDates.push(new bitDate(show));
 			}
-			
+
 			//is it the same as the next date (if there is a next?)
 			//loop through and consolidate same day shows
 		}
