@@ -7,7 +7,7 @@ function bitDate(data) {
 	self.formatted_location = data.formatted_location;
 
 	//tickets are an array now w/ time attr
-	self.tickets = [{'ticket_url': data.ticket_url, 'time':data.datetime.substring(5, data.datetime.length).slice(0,-8), 'rsvp_url':data.facebook_rsvp_url}];
+	self.tickets = [{ticket_url: data.ticket_url, time:data.datetime.substring(5, data.datetime.length).slice(0,-8), rsvp_url:data.facebook_rsvp_url}];
 	self.title = data.title;
 	self.description = data.description || "";
 	self.artists = data.artists.slice(0, 5);
