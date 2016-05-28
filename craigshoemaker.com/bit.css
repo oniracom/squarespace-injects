@@ -50,6 +50,7 @@ th, td{
 #tour_dates td {
     border-color:#393836;
     text-align: left;
+    padding: 2px
 }
 #tour_dates td a {
 	color: #000;
@@ -62,11 +63,11 @@ th, td{
 #tour_dates tr.whiteTransOdd {
 	background-color: #16191c;
 }
-#tour_dates .detailsShown th,
+/*#tour_dates .detailsShown th,
 #tour_dates .detailsShown td {
 	border-color:transparent;
 	padding: 2px
-}
+}*/
 
 #tour_dates .button.plusLink {
 	-moz-border-radius: 2px;
