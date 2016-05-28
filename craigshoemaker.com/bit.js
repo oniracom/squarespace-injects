@@ -51,11 +51,11 @@ function bitViewModel(limit) {
 			//slice the left 2016-05-27
 			var showDate = show.datetime.substring(5, show.datetime.length).slice(0,-9);
 			if (bitDates.length === 0) {
-				bitDates.push(show);
+				bitDates.push(new bitDate(show));
 			} else if (bitDates[bitDates.length-1].date === showDate) {
 				bitDates[bitDates.length-1].addTicket(show);
 			} else {
-				bitDates.push(show);
+				bitDates.push(new bitDate(show));
 			}
 			
 			//is it the same as the next date (if there is a next?)
