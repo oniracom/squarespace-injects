@@ -184,7 +184,7 @@ th, td{
 }
 
 
-tr.odd td {
+#tour_dates tr.odd td {
   background-color: #ccc;
   border: 1px solid #ccc;
 }
