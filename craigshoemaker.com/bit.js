@@ -3,7 +3,7 @@
 function bitDate(data) {
 	var self = this;
 	self.addTicket = function(data) {
-		self.tickets.push({ticket_url: data.ticket_url, time: datetime.format('LT'), rsvp_url:data.facebook_rsvp_url});
+		self.tickets.push({ticket_url: data.ticket_url, time: data.datetime.format('LT'), rsvp_url:data.facebook_rsvp_url});
 	};
 	self.date = data.datetime.substring(5, data.datetime.length).slice(0,-9);
 	self.venue = data.venue;
