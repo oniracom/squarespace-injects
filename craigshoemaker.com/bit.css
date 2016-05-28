@@ -78,10 +78,10 @@ th, td{
 .supportArtists { font-size: 0.75em; }
 .detailRow {display: none;}
 .detailRow img {
-	display: block;
+	display: inline;
 	border: 2px solid #000;
 	margin: 0 24px 0 0;
-	float: left;
+	/*float: left;*/
 }
 .detailRow td {
 	padding: 20px 0;
@@ -139,8 +139,8 @@ th, td{
 #tour_dates .arrowLink { font-size: 28px; }
 #tour_dates .detailRow img {
 	border: 2px solid #000000;
-	display: block;
-	float: left;
+	display: inline;
+	/*float: left;*/
 	margin: 0.5em 1em 0.5em 0;
 }
 
@@ -173,4 +173,28 @@ th, td{
 }
 @media (max-width: 380px) {
 	#tour_dates .detailRow .googlemap { width: 280px; }
+}
+
+
+tr.odd td {
+  background-color: #ccc;
+}
+
+.detailRowContainer {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.center {
+	text-align: center
+}
+
+@media (max-width: 768px) {
+	.detailRowContainer {
+		-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column
+	}
 }
