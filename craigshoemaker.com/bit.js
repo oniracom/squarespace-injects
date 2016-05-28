@@ -31,7 +31,7 @@ function bitDate(data) {
 	});
 	//self.date = 
 	self.addTicket = function(data) {
-		self.tickets.push({'url': ticketdata.ticket_url, 'time':data.datetime.substring(5, data.datetime.length).slice(0,-8), 'rsvp_url':data.facebook_rsvp_url});
+		self.tickets.push({'url': data.ticket_url, 'time':data.datetime.substring(5, data.datetime.length).slice(0,-8), 'rsvp_url':data.facebook_rsvp_url});
 	};
 }
 
