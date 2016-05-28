@@ -121,10 +121,16 @@ th, td{
 }
 #tour_dates .ticketLink {
 	font-weight: 700;
-	display: block;
+	display: inline-block; padding: 0 12px;
 	/*padding: 8px 16px;
 	text-align: center;*/
 	text-transform: uppercase;
+	border: 1px solid black;
+	border-radius: 3px;
+	margin: 2px;
+}
+#tour_dates .ticketLink i {
+	margin-right: 2px
 }
 #tour_dates .rsvpSection { text-align: center; }
 #tour_dates .fbrsvp {
@@ -165,7 +171,7 @@ th, td{
 	/* ---------- tour ----------- */
 	#tour_dates  { font-size: 14px; }
 	#tour_dates  td {padding: 8px;}
-	#tour_dates .ticketLink { display: inline-block; padding: 0 12px; }
+	/*#tour_dates .ticketLink { display: inline-block; padding: 0 12px; }*/
 	#tour_dates .detailRow .googlemap { float: none; margin: 0; text-align: center; max-width: 100%; }
 }
 @media (max-width: 480px) {
