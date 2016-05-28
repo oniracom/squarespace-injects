@@ -121,8 +121,9 @@ th, td{
 }
 #tour_dates .ticketLink {
 	font-weight: 700;
-	padding: 8px 16px;
-	text-align: center;
+	display: block;
+	/*padding: 8px 16px;
+	text-align: center;*/
 	text-transform: uppercase;
 }
 #tour_dates .rsvpSection { text-align: center; }
