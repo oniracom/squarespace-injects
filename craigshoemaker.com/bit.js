@@ -52,9 +52,6 @@ function bitViewModel(limit) {
 		if(data.dateIndex === 0) {
 			data.active(true);
 		}
-		// console.log('after render!');
-		console.log('elements', elements);
-		console.log('data', data);
 	};
 
 	var bitCurl = 'https://api.bandsintown.com/artists/craigshoemaker/events.json?api_version=2.0&app_id=OniracomGLove&callback=?';
