@@ -5,7 +5,9 @@ function bitDate(data) {
 	self.date = data.datetime.substring(5, data.datetime.length).slice(0,-9);
 	self.venue = data.venue;
 	self.formatted_location = data.formatted_location;
-	self.ticket_url = data.ticket_url;
+
+	//tickets are an array now w/ time attr
+	self.tickets = [{'url': data.ticket_url, 'time':data.datetime.substring(5, data.datetime.length).slice(0,-8), 'rsvp_url':data.facebook_rsvp_url}];
 	self.title = data.title;
 	self.description = data.description || "";
 	self.artists = data.artists.slice(0, 5);
@@ -28,6 +30,9 @@ function bitDate(data) {
 		return 'https://maps.google.com/maps?daddr='+self.venue.name+'&amp;hl=en&amp;sll='+self.venue.latitude+','+self.venue.longitude;
 	});
 	//self.date = 
+	self.addTicket = function(data) {
+		self.tickets.push({'url': ticketdata.ticket_url, 'time':data.datetime.substring(5, data.datetime.length).slice(0,-8), 'rsvp_url':data.facebook_rsvp_url});
+	};
 }
 
 function bitViewModel(limit) {
@@ -36,10 +41,29 @@ function bitViewModel(limit) {
 
 	self.tourDates = ko.observableArray([]);
 
-	var bitCurl = 'https://api.bandsintown.com/artists/craigshoemaker/events.json?api_version=2.0&app_id=OniracomGLove&callback=?'
+	var bitCurl = 'https://api.bandsintown.com/artists/craigshoemaker/events.json?api_version=2.0&app_id=OniracomGLove&callback=?';
+	
 	$.getJSON(bitCurl,  function(data){
-		var bitDates = $.map(data, function(date) {  return new bitDate(date); });
-		if(limit != undefined) {
+		var bitDates = [];
+		for(var i = 0; i < data.length; i++) {
+			var show = data[i];
+			//grab the datetime
+			//slice the left 2016-05-27
+			var showDate = show.data.datetime.substring(5, data.datetime.length).slice(0,-9);
+			if (bitDates.length > 0) {
+				bitDates.push(show);
+			} else if (bitDates[bitDates.length-1].date === showDate) {
+				bitDates[bitDates.length-1].addTicket(show);
+			} else {
+				bitDates.push(show);
+			}
+			
+			//is it the same as the next date (if there is a next?)
+			//loop through and consolidate same day shows
+		}
+
+		//$.map(data, function(date) {  return new bitDate(date); });
+		if(typeof limit !== 'undefined') {
 			bitDates = bitDates.slice(0,limit);
 		}
         self.tourDates(bitDates);
@@ -54,7 +78,7 @@ function bitViewModel(limit) {
 			});
 			date.active(true);
 		}
-	}
+	};
 }
 
 
@@ -67,6 +91,10 @@ ko.bindingHandlers.fadeVisible = {
     update: function(element, valueAccessor) {
         // Whenever the value subsequently changes, slowly fade the element in or out
         var value = valueAccessor();
-        ko.utils.unwrapObservable(value) ? $(element).fadeIn() : $(element).fadeOut();
+        if(ko.utils.unwrapObservable(value)) {
+        	$(element).fadeIn();
+        } else {
+        	$(element).fadeOut();
+        }
     }
 };
