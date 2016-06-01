@@ -79,11 +79,11 @@ th, td{
 }
 
 .supportArtists { font-size: 0.75em; }
-.detailRow {display: none;}
+.detailRow {display: none; background-color: #ffffe0}
 .detailRow img {
 	display: inline;
 	border: 2px solid #000;
-	margin: 0 24px 0 0;
+	/*margin: 0 24px 0 0;*/
 	/*float: left;*/
 }
 .detailRow td {
@@ -150,7 +150,7 @@ th, td{
 	border: 2px solid #000000;
 	display: inline;
 	/*float: left;*/
-	margin: 0.5em 1em 0.5em 0;
+	/*margin: 0.5em 1em 0.5em 0;*/
 }
 
 #tour_dates .supportArtists { font-size: 0.7143em; display: block; }
@@ -206,6 +206,7 @@ th, td{
 #tour_dates tr.isActive span.fa-chevron-down {
 	display: none;
 }
+
 
 
 .detailRowContainer {
