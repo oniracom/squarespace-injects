@@ -208,6 +208,9 @@ th, td{
 	display: none;
 }
 
+#tour_dates td.dateCol {
+    padding-left: 0.5em;
+}
 
 
 .detailRowContainer {
