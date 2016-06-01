@@ -132,6 +132,7 @@ th, td{
 	border: 1px solid black;
 	border-radius: 3px;
 	margin: 2px;
+	min-width: 83px;
 }
 #tour_dates .ticketLink i {
 	margin-right: 2px
