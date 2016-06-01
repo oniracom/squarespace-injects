@@ -190,6 +190,24 @@ th, td{
   border: 1px solid #eee;
 }
 
+#tour_dates tr.isActive, #tour_dates tr.isActive.odd {
+	background-color: #ffffe0;
+}
+
+
+#tour_dates tr span.fa-chevron-up {
+	display: none;
+}
+
+#tour_dates tr.isActive span.fa-chevron-up {
+	display: inline-block;
+}
+
+#tour_dates tr.isActive span.fa-chevron-down {
+	display: none;
+}
+
+
 .detailRowContainer {
 	display: -webkit-box;
     display: -ms-flexbox;
