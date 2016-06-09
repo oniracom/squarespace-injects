@@ -4,8 +4,18 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
     // style: 'mapbox://styles/mapbox/light-v9',
     style: 'mapbox://styles/bestbeverage/cip8x37d40033ahnf7bnjvbin',
     center: [-96, 37.8],
-    zoom: 3 // starting zoom
+    zoom: 3 // starting zoom,
+    mixZoom: 3,
+    maxZoom: 3
   });
+
+  // Disable drag and zoom handlers.
+map.boxZoom.disable();
+map.dragPan.disable();
+map.dragRotate.disable();
+map.keyboard.disable();
+map.doubleClickZoom.disable();
+map.touchZoomRotate.disable();
 
   map.on('load', function () {
 
