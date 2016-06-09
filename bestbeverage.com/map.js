@@ -14,6 +14,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
         },
         on: {
             success: function (e) {
+                console.log('e',e);
                 var locationMap = JSON.parse(e.responseText);
                 console.log('locationMap',locationMap);
                 var locations = locationMap.items;
