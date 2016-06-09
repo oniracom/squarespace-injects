@@ -13,7 +13,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
             'Content-Type': 'application/json',
         },
         on: {
-            success: function (e) {
+            complete: function (id,e) {
                 console.log('e',e);
                 var locationMap = JSON.parse(e.responseText);
                 console.log('locationMap',locationMap);
