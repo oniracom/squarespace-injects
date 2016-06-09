@@ -19,7 +19,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
                 console.log('locationMap',locationMap);
                 var locations = locationMap.items;
                 var geojson = {"type":"geojson", "data": []};
-                $.each(locations, function (locationIndex, locationData) {
+                Y.each(locations, function (locationData, locationIndex) {
                     var coordinates = [locationData.location.markerLat,locationData.location.markerLng];
                     var location = {"type":"Feature","geometry":{"type":"Point","coordinates":coordinates},"properties":{"title":locationData.title,"description":locationData.body}};
                     console.log('location',location);
