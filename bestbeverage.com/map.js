@@ -9,6 +9,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
   map.on('load', function () {
 
     Y.io('/location-map/?format=json', {
+        headers: {
+            'Content-Type': 'application/json',
+        },
         on: {
             success: function (e) {
                 var locationMap = JSON.parse(e.responseText);
