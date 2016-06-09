@@ -1,7 +1,8 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y2x5czA1dmlpMncifQ.8jilQ5MUy-OfJktXcC014A';
   var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/light-v9',
+    container: 'map',
+    // style: 'mapbox://styles/mapbox/light-v9',
+    style: 'mapbox://styles/bestbeverage/cip8x37d40033ahnf7bnjvbin',
     center: [-96, 37.8],
     zoom: 3 // starting zoom
   });
@@ -14,18 +15,18 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
         },
         on: {
             complete: function (id,e) {
-                console.log('e',e);
+                // console.log('e',e);
                 var locationMap = JSON.parse(e.responseText);
-                console.log('locationMap',locationMap);
+                // console.log('locationMap',locationMap);
                 var locations = locationMap.items;
                 var geojson = {"type":"geojson", "data": {"type":"FeatureCollection","features":[]}};
                 Y.each(locations, function (locationData, locationIndex) {
                     var coordinates = [locationData.location.markerLng,locationData.location.markerLat];
                     var location = {"type":"Feature","geometry":{"type":"Point","coordinates":coordinates},"properties":{"title":locationData.title,"description":locationData.body}};
-                    console.log('location',location);
+                    // console.log('location',location);
                     geojson.data.features.push(location);
                 });
-                console.log('geojson',geojson);
+                // console.log('geojson',geojson);
                 map.addSource("markers", geojson);
 
                 map.addLayer({
