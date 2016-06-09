@@ -7,7 +7,43 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
   });
 
   map.on('load', function () {
-    map.addSource("markers", {
+
+    $.ajax({
+        url: '/location-map/?format=json',
+        dataType: 'json',
+        success: function (locationMap) {
+            console.log('locationMap',locationMap);
+            var locations = locationMap.items;
+            var geojson = {"type":"geojson", "data": []};
+            $.each(locations, function (locationIndex, locationData) {
+                var coordinates = [locationData.location.markerLat,locationData.location.markerLng];
+                var location = {"type":"Feature","geometry":{"type":"Point","coordinates":coordinates},"properties":{"title":locationData.title,"description":locationData.body}};
+                console.log('location',location);
+                geojson.data.push(location);
+            });
+            console.log('geojson',geojson);
+            map.addSource("markers", {
+                "type": "geojson",
+                "data":geojson
+            });
+
+            map.addLayer({
+                "id": "markers",
+                "type": "symbol",
+                "source": "markers",
+                "layout": {
+                    // "icon-image": "{marker-symbol}-15",
+                    "icon-image": "alcohol-shop-15",
+                    "text-field": "{title}",
+                    "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                    "text-offset": [0, 0.6],
+                    "text-anchor": "top"
+                }
+            });
+        }
+    });
+
+    /*map.addSource("markers", {
         "type": "geojson",
         "data": {
             "type": "FeatureCollection",
@@ -37,19 +73,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
             }]
         }
     });
+*/
 
-    map.addLayer({
-        "id": "markers",
-        "type": "symbol",
-        "source": "markers",
-        "layout": {
-            "icon-image": "{marker-symbol}-15",
-            "text-field": "{title}",
-            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-            "text-offset": [0, 0.6],
-            "text-anchor": "top"
-        }
-    });
 });
 
 
