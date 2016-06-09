@@ -26,10 +26,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
                     geojson.data.push(location);
                 });
                 console.log('geojson',geojson);
-                map.addSource("markers", {
-                    "type": "geojson",
-                    "data":geojson
-                });
+                map.addSource("markers", geojson);
 
                 map.addLayer({
                     "id": "markers",
