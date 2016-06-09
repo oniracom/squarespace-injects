@@ -18,12 +18,12 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYmVzdGJldmVyYWdlIiwiYSI6ImNpcDdsc3g2cTAxNDh0Y
                 var locationMap = JSON.parse(e.responseText);
                 console.log('locationMap',locationMap);
                 var locations = locationMap.items;
-                var geojson = {"type":"geojson", "data": []};
+                var geojson = {"type":"geojson", "data": {"type":"FeatureCollection","features":[]}};
                 Y.each(locations, function (locationData, locationIndex) {
                     var coordinates = [locationData.location.markerLat,locationData.location.markerLng];
                     var location = {"type":"Feature","geometry":{"type":"Point","coordinates":coordinates},"properties":{"title":locationData.title,"description":locationData.body}};
                     console.log('location',location);
-                    geojson.data.push(location);
+                    geojson.data.features.push(location);
                 });
                 console.log('geojson',geojson);
                 map.addSource("markers", geojson);
