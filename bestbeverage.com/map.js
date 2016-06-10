@@ -46,6 +46,8 @@ map.touchZoomRotate.disable();
                     "layout": {
                         // "icon-image": "{marker-symbol}-15",
                         "icon-image": "alcohol-shop-15",
+                        "icon-color": "#01C8FC",
+                        "text-color": "#01C8FC",
                         "text-field": "{title}",
                         "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
                         "text-offset": [0, 0.6],
@@ -115,5 +117,5 @@ map.on('click', function (e) {
 // by changing the cursor style to 'pointer'.
 map.on('mousemove', function (e) {
     var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
-    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+    map.getCanvas().style.cursor = (features.length) ? 'pointer' : 'default';
 });
