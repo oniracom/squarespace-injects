@@ -54,7 +54,6 @@ map.scrollZoom.disable();
                     },
                     "paint": {
                         "icon-color": "#FE5400",
-                        "marker-color": "#FE5400",
                         "text-color": "#01C8FC"
                     }
                 });
