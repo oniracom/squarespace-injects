@@ -46,12 +46,14 @@ map.touchZoomRotate.disable();
                     "layout": {
                         // "icon-image": "{marker-symbol}-15",
                         "icon-image": "alcohol-shop-15",
-                        "icon-color": "#01C8FC",
-                        "text-color": "#01C8FC",
                         "text-field": "{title}",
                         "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
                         "text-offset": [0, 0.6],
                         "text-anchor": "top"
+                    },
+                    "paint": {
+                        "icon-color": "#FE5400",
+                        "text-color": "#01C8FC"
                     }
                 });
             }
