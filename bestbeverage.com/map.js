@@ -16,6 +16,7 @@ map.dragRotate.disable();
 map.keyboard.disable();
 map.doubleClickZoom.disable();
 map.touchZoomRotate.disable();
+map.scrollZoom.disable();
 
   map.on('load', function () {
 
@@ -45,7 +46,7 @@ map.touchZoomRotate.disable();
                     "source": "markers",
                     "layout": {
                         // "icon-image": "{marker-symbol}-15",
-                        "icon-image": "alcohol-shop-15",
+                        "icon-image": "circle-15",
                         "text-field": "{title}",
                         "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
                         "text-offset": [0, 0.6],
@@ -53,6 +54,7 @@ map.touchZoomRotate.disable();
                     },
                     "paint": {
                         "icon-color": "#FE5400",
+                        "marker-color": "#FE5400",
                         "text-color": "#01C8FC"
                     }
                 });
