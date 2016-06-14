@@ -1,6 +1,9 @@
 #collection-5746db4c9f7266e08f9b2bd0 #parallax-images .image-container {
 	position: static
 }
+#collection-5746db4c9f7266e08f9b2bd0 .collection-type-index.title--description-position-under-image.title--description-alignment-center .title-desc-wrapper .title-desc-inner[data-collection-id="5746db4c9f7266e08f9b2bd0"] {
+	padding: 0;
+}
 
 #home-top-buttons {
 	display: -webkit-box;
@@ -14,6 +17,7 @@
 
 #home-top-buttons a {
 	margin: 10px 20px;
+	background-color: #000
 }
 
 /*
