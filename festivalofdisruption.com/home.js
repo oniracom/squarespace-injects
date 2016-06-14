@@ -1,6 +1,6 @@
 
 Y.on('domready', function () {
-	var buttonWrapper = Y.Node.create('<div></div>');
+	var buttonWrapper = Y.Node.create('<div id="home-top-buttons"></div>');
 	buttonWrapper.append(Y.Node.create('<a href="/tickets" class="sqs-editable-button">get tickets</a>'));
 	buttonWrapper.append(Y.Node.create('<a href="/festival-information" class="sqs-editable-button">what to expect</a>'));
 

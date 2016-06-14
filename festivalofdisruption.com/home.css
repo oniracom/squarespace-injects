@@ -1,3 +1,16 @@
 #collection-5746db4c9f7266e08f9b2bd0 #parallax-images .image-container {
 	position: static
 }
+
+#home-top-buttons {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+#home-top-buttons a {
+	margin: 10px 20px;
+}
