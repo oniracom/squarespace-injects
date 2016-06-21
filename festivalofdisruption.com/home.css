@@ -20,6 +20,12 @@
 	background-color: #000
 }
 
+@media (max-width: 500px) {
+  #home-top-buttons a {
+    padding: 1em;
+  }
+}
+
 /*
 h1.page-title, h1, .main-nav ul li a span, .secondary-nav ul li a span, h2, h3, p, .page-desc p, .page-desc p strong, .sqs-block-summary-v2 .summary-title, label, body:not(.button-style-default) input.button.sqs-editable-button, .extra-description-formatting .page-desc p:last-child>a {
 	*/
