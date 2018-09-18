@@ -178,7 +178,7 @@ function getDates(dates, placement){
 			} else {
 				description = '';
 			}
-			$artists = obj.artists;
+			$artists = obj.lineup;
 			$artists.shift();
 			$artists = $artists.slice(0,4);
 			var rowClass = (i%2 == 0 ? 'whiteTransEven' : 'whiteTransOdd');
