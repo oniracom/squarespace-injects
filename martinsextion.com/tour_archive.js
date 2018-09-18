@@ -214,7 +214,7 @@ function getPastDates(dates, placement){
 				} else {
 					description = '';
 				}
-				$artists = obj.artists;
+				$artists = obj.lineup;
 				$artists.shift();
 				$artists = $artists.slice(0,4);
 
