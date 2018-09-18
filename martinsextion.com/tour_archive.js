@@ -152,7 +152,7 @@ _.templateSettings = {
 };
 function getDates(dates, placement){
 
-	$.getJSON('https://api.bandsintown.com/artists/Martin%20Sexton/events.json?api_version=2.0&app_id=OniracomGLove&callback=?',  function(data){
+	$.getJSON('https://rest.bandsintown.com/artists/Martin%20Sexton/events?api_version=3.0&app_id=Slightly%20StoopidOniracom&extended=true&callback=?',  function(data){
 		if(!placement){
 			placement = $('#tour_dates tbody');
 		}
@@ -189,7 +189,7 @@ function getDates(dates, placement){
 };
 function getPastDates(dates, placement){
 
-	$.getJSON('https://api.bandsintown.com/artists/Martin%20Sexton/events.json?api_version=2.0&app_id=OniracomGLove&date=all&callback=?',  function(data){
+	$.getJSON('https://rest.bandsintown.com/artists/Martin%20Sexton/events?api_version=3.0&app_id=Slightly%20StoopidOniracom&extended=true&callback=?',  function(data){
 		if(!placement){
 			placement = $('#pasttour_dates tbody');
 		}
