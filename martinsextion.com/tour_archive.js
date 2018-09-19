@@ -182,6 +182,12 @@ function getDates(dates, placement){
 			$artists.shift();
 			$artists = $artists.slice(0,4);
 			var rowClass = (i%2 == 0 ? 'whiteTransEven' : 'whiteTransOdd');
+			data[i].venue_name = data[i].venue.name;
+			if(data[i].venue.region === '') {
+				data[i].formatted_location = data[i].venue.city+', '+data[i].venue.country;	
+			} else {
+				data[i].formatted_location = data[i].venue.city+', '+data[i].venue.region;
+			}
 			placement.append(template({obj: obj, date: date, ticket_url: $ticket_url, description: description, rowClass: rowClass, artists: $artists}));
 			//trString);
 		}
