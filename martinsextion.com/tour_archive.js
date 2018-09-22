@@ -172,8 +172,16 @@ function getDates(dates, placement){
 			var today = new Date().toString('yyyyMMdd');
 
 			var $ticket_url = '';
-			console.log(obj.offers);
-			
+			// console.log(obj.offers);
+			if(Array.isArray(obj.offers) && obj.offers.length > 0) {
+                for(var i = 0; i < obj.offers.length; i++) {
+					if (obj.offers[i].type ===  'Tickets') {
+				        $ticket_url = obj.offers[i].url;
+				        // $ticket.type = obj.offers[i].type;
+						// $ticket.id = i;
+                    }
+                }
+			}
 			var description = obj.description;
 			if(description){
 				description = description+'<br /><br />'
