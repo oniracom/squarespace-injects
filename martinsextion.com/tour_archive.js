@@ -172,6 +172,27 @@ function getDates(dates, placement){
 			var today = new Date().toString('yyyyMMdd');
 
 			var $ticket_url = obj.ticket_url;
+			if(Array.isArray(obj.offers) && obj.offers.length > 0) {
+                for(var i = 0; i < obj.offers.length; i++) {
+					// if(obj.on_sale_datetime !== '') {
+					if(obj.offers[i].type ===  'Presale') {
+						// $ticket.url = obj.offers[i].url;
+				        // $ticket.type = obj.offers[i].type;
+						// $ticket.id = i;
+						var onsale = new Date.parse(obj.on_sale_datetime);
+						/* $ticket.name = (onsale.getMonth()+1)+'/'+onsale.getDate()+' @ '+(onsale.getHours() > 12 ? onsale.getHours()-12 : onsale.getHours())+':'+(onsale.getMinutes() < 10 ? '0'+onsale.getMinutes() : onsale.getMinutes())+(onsale.getHours() > 11 ? 'PM' : 'AM');*/
+						// $ticket.name = obj.offers[i].type;
+					} else if (obj.offers[i].type ===  'Tickets') {
+				        $ticket_url = obj.offers[i].url;
+				        // $ticket.type = obj.offers[i].type;
+						// $ticket.id = i;
+                    } else if (obj.offers[i].type !== 'Tickets' && obj.on_sale_datetime !== '') {
+                        // $customticket.url = obj.offers[i].url;
+				        // $customticket.type = obj.offers[i].type;
+                        // $customticket.id = i;
+                    }
+                }
+			}
 			var description = obj.description;
 			if(description){
 				description = description+'<br /><br />'
