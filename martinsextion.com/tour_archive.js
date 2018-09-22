@@ -175,6 +175,7 @@ function getDates(dates, placement){
 			// console.log(obj.offers);
 			if(Array.isArray(obj.offers) && obj.offers.length > 0) {
                 for(var j = 0; j < obj.offers.length; j++) {
+					console.log(obj.offers[j]);
 					if (obj.offers[j].type ===  'Tickets') {
 				        $ticket_url = obj.offers[j].url;
 				        // $ticket.type = obj.offers[i].type;
