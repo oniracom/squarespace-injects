@@ -174,9 +174,9 @@ function getDates(dates, placement){
 			var $ticket_url = '';
 			// console.log(obj.offers);
 			if(Array.isArray(obj.offers) && obj.offers.length > 0) {
-                for(var i = 0; i < obj.offers.length; i++) {
-					if (obj.offers[i].type ===  'Tickets') {
-				        $ticket_url = obj.offers[i].url;
+                for(var j = 0; j < obj.offers.length; j++) {
+					if (obj.offers[j].type ===  'Tickets') {
+				        $ticket_url = obj.offers[j].url;
 				        // $ticket.type = obj.offers[i].type;
 						// $ticket.id = i;
                     }
