@@ -206,7 +206,7 @@ function getDates(dates, placement){
 };
 function getPastDates(dates, placement){
 
-	$.getJSON('https://rest.bandsintown.com/artists/Martin%20Sexton/events?api_version=3.0&app_id=Slightly%20StoopidOniracom&extended=true&callback=?',  function(data){
+	$.getJSON('https://rest.bandsintown.com/artists/Martin%20Sexton/events?api_version=3.0&app_id=Slightly%20StoopidOniracom&extended=true&date=past&callback=?',  function(data){
 		if(!placement){
 			placement = $('#pasttour_dates tbody');
 		}
